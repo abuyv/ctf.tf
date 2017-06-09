@@ -12,7 +12,7 @@
                     {% if isIndexPage %}
                         <h1>{{page.title}}</h1>
                     {% else %}
-                        <h1><a href="{{site.url}}/index/">Index</a>/{{page.title}}</h1>
+                        <h1><a href="{{site.url}}/index/">Index</a>/{{page.title | downcase}}</h1>
                     {% endif %}
                 </li>
                 <li></li>

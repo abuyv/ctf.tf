@@ -4,9 +4,9 @@
     	{% include index-list list=site.ctfs letter=_item.title %}
     	{% assign listsize = list | size %}
     	{% if listsize > 0 %}
-        	<li><a href="{{site.url}}{{_item.url}}">{{_item.title}}</a></li>
+        	<li><a href="{{site.url}}{{_item.url}}">{{_item.title | downcase}}</a></li>
         {% else %}
-        	<li><a href="{{site.url}}{{_item.url}}" class="empty">{{_item.title}}</a></li>
+        	<li><a href="{{site.url}}{{_item.url}}" class="empty">{{_item.title | downcase}}</a></li>
         {% endif %}
     {% endif %}
 {% endfor %}
