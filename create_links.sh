@@ -97,7 +97,7 @@ ln -s 0.html 6.html
 ln -s 0.html 7.html
 ln -s 0.html 8.html
 ln -s 0.html 9.html
-ln -s 0.html a
+ln -s 0.html a.html
 ln -s 0.html b.html
 ln -s 0.html c.html
 ln -s 0.html d.html
