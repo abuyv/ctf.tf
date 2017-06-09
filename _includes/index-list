@@ -1,8 +1,10 @@
 {% assign list = '' | split: ',' %}
 {% assign _letter = include.letter | downcase %}
 {% for _item in include.list %}
-    {% assign _item_letter = _item.title | slice: 0, 1 | downcase %}
-    {% if _letter == _item_letter %}
-        {% assign list = list | push: _item %}
+    {% if _item.draft != true %}
+        {% assign _item_letter = _item.title | slice: 0, 1 | downcase %}
+        {% if _letter == _item_letter %}
+            {% assign list = list | push: _item %}
+        {% endif %}
     {% endif %}
 {% endfor %}
