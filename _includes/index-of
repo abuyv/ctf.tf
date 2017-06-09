@@ -1,0 +1,21 @@
+{% if include.case == false %}
+    {% assign _indexOf__str = include.str | downcase %}
+    {% assign _indexOf__search = include.search | downcase %}
+{% else %}
+    {% assign _indexOf__str = include.str %}
+    {% assign _indexOf__search = include.search %}
+{% endif %}
+
+{% assign _indexOf__strsize = _indexOf__str | size %}
+{% assign _indexOf__searchsize = _indexOf__search | size %}
+
+{% assign indexOf = -1 %}
+{% if _indexOf__searchsize < _indexOf__strsize %}
+    {% for _indexOf__i in (0.._indexOf__strsize) %}
+        {% assign _indexOf__part = _indexOf__str | slice: _indexOf__i, _indexOf__searchsize %}
+        {% if _indexOf__part == _indexOf__search %}
+            {% assign indexOf = _indexOf__i %}
+            {% break %}
+        {% endif %}
+    {% endfor %}
+{% endif %}

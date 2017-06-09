@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        {% if page.collection == 'ctfs' %}
+            {% if page.summary != nil %}
+                <meta name="description" content="{{page.summary | markdownify | strip_html | normalize_whitespace | truncatewords: 50}}">
+            {% endif %}
+        {% else %}
+            <meta name="description" content="{{site.description}}">
+        {% endif %}        
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="stylesheet" type="text/css" href="{{site.url}}/assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="{{site.url}}/assets/css/lato.css">
+        <link rel="stylesheet" type="text/css" href="{{site.url}}/assets/css/font-awesome.min.css">
+        <link rel="shortcut icon" type="image/png" href="{{site.url}}/assets/img/favicon.png">
+        {% if page.collection and page.collection != 'ctfs' %}
+            <title>{{site.title}} - {{page.collection | capitalize }}</title>
+        {% else %}
+            {% if page.title %}
+                <title>{{site.title}} - {{page.title}}</title>
+            {% else %}
+                <title>{{site.title}}</title>
+            {% endif %}
+        {% endif %}
+    </head>
+    <body>
+        <a id="top" name="top"></a>
+        <header>
+            <ul>
+                <li><a href="{{site.url}}/" class="logo"></a></li>
+                <li><a href="{{site.url}}/mode/easy/">Easy</a></li>
+                <li><a href="{{site.url}}/mode/medium/">Medium</a></li>
+                <li><a href="{{site.url}}/mode/hard/">Hard</a></li>
+                <li><a href="{{site.url}}/latest/">Latest CTF's</a></li>
+                <li><a href="{{site.url}}/browse/">Browse</a></li>
+                <li><a href="{{site.url}}/index/">Index</a></li>
+                <li><a href="{{site.url}}/about/" class="fa fa-question"></a><a href="https://github.com/Eun/ctf.tf" class="fa fa-github"></a></li>
+            </ul>
+        </header>

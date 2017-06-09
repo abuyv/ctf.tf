@@ -1,0 +1,77 @@
+gems:
+- octopress-minify-html
+
+sass:
+  style: compressed
+
+minify_html: true
+
+url: "//ctf.tf"
+title: "ctf.tf"
+description: "ctf.tf is a database of collected ctfs and their solutions."
+collections:
+  ctfs:
+    output: true
+    permalink: /:collection/:path/
+  index:
+    output: true
+    permalink: /index/:path/
+  browse:
+    output: true
+    permalink: /browse/:path/
+    paginate: 20
+  latest:
+    output: true
+    permalink: /latest/:path/
+    paginate: 20
+  easy:
+    output: true
+    permalink: /mode/:path/
+    paginate: 20
+  medium:
+    output: true
+    permalink: /mode/:path/
+    paginate: 20
+  hard:
+    output: true
+    permalink: /mode/:path/
+    paginate: 20
+
+
+defaults:
+  - scope:
+      path: ""
+      type: ctfs
+    values:
+      layout: ctf
+  - scope:
+      path: ""
+      type: index
+    values:
+      layout: index
+  - scope:
+      path: ""
+      type: browse
+    values:
+      layout: browse
+  - scope:
+      path: ""
+      type: latest
+    values:
+      layout: latest
+  - scope:
+      path: ""
+      type: easy
+    values:
+      layout: easy
+  - scope:
+      path: ""
+      type: medium
+    values:
+      layout: medium
+  - scope:
+      path: ""
+      type: hard
+    values:
+      layout: hard
+exclude: [README.md, LICENSE, .git, create_links.sh, CNAME]

@@ -1,0 +1,112 @@
+{% include page-header.html %}
+{% if page.summary != nil %}
+    {% assign summary = page.summary | markdownify | strip_html | normalize_whitespace | truncatewords: 50 %}
+{% endif %}
+{% include get-part part='description' content=page.content %}
+{% if getPart != nil %}
+    {% assign description = getPart | markdownify %}
+{% endif %}
+{% include get-part part='hints' content=page.content %}
+{% if getPart != nil %}
+    {% assign hints = getPart %}
+{% endif %}
+{% include get-part part='writeup' content=page.content %}
+{% if getPart != nil %}
+    {% assign writeup = getPart | markdownify %}
+{% endif %}
+
+<main>
+    <header>
+        <div>
+            <ul>
+                <li>
+                    <h1><a href="{{site.url}}{{page.url}}">{{page.title}}</a></h1>
+                    {% if summary != nil %}
+                        <h2>{{summary}}</h2>
+                    {% endif %}
+                    {% assign tagSize = page.tags | size %}
+                    {% if tagSize > 0 %}
+                    <ul class="tags">
+                        {% for tag in page.tags %}<li>{{tag}}</li>{% endfor %}
+                    </ul>
+                    {% endif %}
+                </li>
+                <li>
+                    <ul class="detail-info">
+                    {% if page.points %}
+                        <li>&nbsp;<a class="info small">{{page.points}} Points</a>&nbsp;</li>
+                    {% endif %}
+                    {% if page.author %}
+                        <li>&nbsp;<a class="info small">{{page.author}}</a>&nbsp;</li>
+                    {% endif %}
+                    {% if page.download %}
+                        <li>&nbsp;<a href="{{page.download}}" class="btn small">Download</a>&nbsp;</li>
+                    {% endif %}
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <content>
+        {% if description or hints or writeup %}
+            <div class="tab-container">
+                {% if description != nil %}
+                    <div class="tab-page"><a id="description" name="description"></a>
+                        <div class="tabs">
+                            <ul>
+                                <li class="active"><a href="#description">Description</a></li>
+                                {% if hints != nil %}
+                                    <li><a href="#hints">Hints</a></li>
+                                {% endif %}
+                                {% if writeup != nil %}
+                                    <li><a href="#writeup">WriteUp</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="content">{{description}}</div>
+                    </div>
+                {% endif %}
+                {% if hints != nil %}
+                    <div class="tab-page"><a id="hints" name="hints"></a>
+                        <div class="tabs">
+                            <ul>
+                                {% if description != nil %}
+                                    <li><a href="#description">Description</a></li>
+                                {% endif %}
+                                <li class="active"><a href="#hints">Hints</a></li>
+                                {% if writeup != nil %}
+                                    <li><a href="#writeup">WriteUp</a></li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="content">{{hints}}</div>
+                    </div>
+                {% endif %}
+                {% if writeup != nil %}
+                <div class="tab-page"><a id="writeup" name="writeup"></a>
+                    <div class="tabs">
+                        <ul>
+                            {% if description != nil %}
+                                <li><a href="#description">Description</a></li>
+                            {% endif %}
+                            {% if hints != nil %}
+                                <li><a href="#hints">Hints</a></li>
+                            {% endif %}
+                            <li class="active"<a href="#writeup">WriteUp</a></li>
+                        </ul>
+                    </div>
+                    <div class="content">{{writeup}}</div>
+                </div>
+                {% endif %}
+            </div>
+        {% else %}
+            <div class="tab-container">
+                <div class="tab-page">
+                    <div class="tabs"></div>
+                    <div class="content">There is no data supplied.</div>
+                </div>
+            </div>
+        {% endif %}
+    </content>
+</main>
+{% include page-footer.html %}

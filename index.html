@@ -1,0 +1,57 @@
+---
+layout: page
+---
+<main>
+    <header>
+        <div>
+            <ul>
+                <li>
+                    <h2>{{site.description}}</h2>
+                </li>
+                <li></li>
+            </ul>
+        </div>
+    </header>
+    <content>
+        <div class="tab-container">
+            <div class="tab-page">
+                <div class="tabs"></div>
+                <div class="content">
+                    <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+                    <ul class="buttons center">
+                        <li><a href="{{site.url}}/easy">Easy</a></li>
+                        <li><a href="{{site.url}}/medium">Medium</a></li>
+                        <li><a href="{{site.url}}/hard">Hard</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>        
+        <div class="tab-container">
+            <div class="tab-page">
+                <div class="tabs"></div>
+                <div class="content">
+                    <h1>Latest CTFS</h1>
+                    {% assign size = site.ctfs | size %}
+                    {% if size > 0 %}
+                        {% assign sorted = site.ctfs | reverse %}
+                        {% include limit-list list=sorted offset=0 count=10 %}
+                        {% include list.html ctfs=list %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="tab-container">
+            <div class="tab-page">
+                <div class="tabs"></div>
+                <div class="content">
+                    {% include index-list.html %}
+                </div>
+            </div>
+        </div>
+</main>

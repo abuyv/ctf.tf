@@ -1,0 +1,40 @@
+{% include page-header.html %}
+{% if page.title == 'Index' %}
+    {% assign isIndexPage = true %}
+{% else %}
+    {% assign isIndexPage = false %}
+{% endif %}
+<main>
+    <header>
+        <div>
+            <ul>
+                <li>
+                    {% if isIndexPage %}
+                        <h1>{{page.title}}</h1>
+                    {% else %}
+                        <h1><a href="{{site.url}}/index/">Index</a>/{{page.title}}</h1>
+                    {% endif %}
+                </li>
+                <li></li>
+            </ul>
+        </div>
+    </header>
+    <content>
+        <div class="tab-container">
+            <div class="tab-page">
+                <div class="tabs"></div>
+                <div class="content">
+                    {% if isIndexPage != true %}
+                        {% assign _letter = page.title %}
+                        {% include index-list list=site.ctfs letter=_letter %}
+                        {% include list.html ctfs=list %}
+                    {% else %}
+                        Browse all ctfs sorted by their first letter.
+                    {% endif %}
+                    {% include index-list.html %}
+                </div>
+            </div>
+        </div>
+    </content>
+</main>
+{% include page-footer.html %}

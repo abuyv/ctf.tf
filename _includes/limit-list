@@ -1,0 +1,10 @@
+{% assign list = '' | split: ',' %}
+{% assign hasMoreItems = false %}
+{% for _item in include.list offset:include.offset %}
+    {% assign _count = list | size | plus: 1 %}
+    {% if _count > include.count %}
+        {% assign hasMoreItems = true %}
+        {% break %}
+    {% endif %}
+    {% assign list = list | push: _item %}
+{% endfor %}

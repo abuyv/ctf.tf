@@ -1,0 +1,29 @@
+{% include page-header.html %}
+<main>
+    <header>
+        <div>
+            <ul>
+                <li>
+                    <h1><span>Latest CTFs</span></h1>
+                </li>
+                <li></li>
+            </ul>
+        </div>
+    </header>
+    <content>
+        <div class="tab-container">
+            <div class="tab-page">
+                <div class="tabs"></div>
+                <div class="content">
+                    {% assign _offset = page.title %}
+                    {% assign _collection = site.collections | where:'label','latest' | first %}
+                    {% assign ctfs = site.ctfs | reverse %}
+                    {% include limit-list list=ctfs offset=_offset count=_collection.paginate %}
+                    {% include list.html ctfs=list collection=_collection offset=_offset hasMoreItems=hasMoreItems %}
+                </div>
+            </div>
+        </div>
+        
+    </content>
+</main>
+{% include page-footer.html %}

@@ -1,0 +1,25 @@
+{% include page-header.html %}
+<main>
+    <header>
+        <div>
+            <ul>
+                <li>
+                    <h1><span>Hard CTFs</span><small>(&gt;300 Points)</small></h1>
+                </li>
+                <li></li>
+            </ul>
+        </div>
+    </header>
+    <content>
+        <div class="tab-container">
+            <div class="tab-page">
+                <div class="tabs"></div>
+                <div class="content">
+                    {% include point-list.html min_points=300 max_points=999 collection='hard' %}
+                </div>
+            </div>
+        </div>
+        
+    </content>
+</main>
+{% include page-footer.html %}

@@ -1,0 +1,13 @@
+{% assign _offset = page.title %}
+{% assign _collection = site.collections | where:'label',include.collection | first %}
+
+{% capture _exp1 %}item.points >= {{ include.min_points }}{% endcapture %}
+{% capture _exp2 %}item.points < {{ include.max_points }}{% endcapture %}
+
+{% assign ctfs = site.ctfs | where_exp:'item', _exp1 %}
+{% assign ctfs = ctfs | where_exp:'item', _exp2 %}
+{% include limit-list list=ctfs offset=_offset count=_collection.paginate %}
+{% include list.html ctfs=list collection=_collection offset=_offset hasMoreItems=hasMoreItems %}
+
+
+
