@@ -30,9 +30,9 @@
                     </ul>
                 </li>
             </ul>
-            <a href="{{ _ctf.url }}"></a>
+            <a href="{{site.url}}{{ _ctf.url }}"></a>
         </li>
-        {% assign i = i | increment %}
+        {% assign i = i | plus: 1 %}
     {% endif %}
 {% endfor %}
 {% if i == 0 %}
@@ -41,17 +41,22 @@
 </ul>
 
 {% if include.offset and include.collection %}
-    {% assign _prevPage = include.offset | minus:include.collection.paginate %}
-    {% assign _prevPage =  include.collection.docs | where:'title', _prevPage | first %}
-
-    {% if _prevPage %}
-        <a href="{{_prevPage.url}}">PREV</a>
-    {% endif %}
-    {% if include.hasMoreItems == true %}
-        {% assign _nextPage = include.offset | plus:include.collection.paginate %}
-        {% assign _nextPage =  include.collection.docs | where:'title', _nextPage | first %}
-        {% if _nextPage %}
-            <a href="{{_nextPage.url}}">NEXT</a>
+    <nav>
+        {% assign _prevPage = include.offset | minus:include.collection.paginate %}
+        {% assign _prevPage =  include.collection.docs | where:'title', _prevPage | first %}
+        {% if _prevPage %}
+            <a href="{{_prevPage.url}}">Previous</a>
         {% endif %}
-    {% endif %}
+        {% if include.hasMoreItems == true %}
+            {% assign _nextPage = include.offset | plus:include.collection.paginate %}
+            {% assign _nextPage =  include.collection.docs | where:'title', _nextPage | first %}
+            {% if _nextPage %}
+                {% if _prevPage %}
+                    <a href="{{_nextPage.url}}">Next</a>
+                {% else %}
+                    <a href="{{_nextPage.url}}">More</a>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    </nav>
 {% endif %}
