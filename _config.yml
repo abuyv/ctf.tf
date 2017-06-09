@@ -8,7 +8,7 @@ minify_html: true
 
 url: "//ctf.tf"
 title: "ctf.tf"
-description: "ctf.tf is a database of collected ctfs and their solutions."
+description: "ctf.tf is a database of collected CTFs and their solutions."
 collections:
   ctfs:
     output: true
