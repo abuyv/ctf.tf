@@ -577,9 +577,10 @@ ul.ctf-list {
     list-style: none;
     &>li {
         display: block;
-        padding: 0;
-        margin: 0;
+        padding: 0 0 1rem 0;
+        margin: 1rem 0;
         position: relative;
+        border-bottom: .05rem solid #ddd;
         &>a {
             position: absolute;
             left: 0;
@@ -610,6 +611,7 @@ ul.ctf-list {
                 display: table-cell;
                 width: 1px;
                 white-space: nowrap;
+                vertical-align: top;
             }
             &>li:last-child {
                 width: auto;
@@ -623,17 +625,9 @@ ul.ctf-list {
         font-style: italic;
         color: #bebebe;
     }
-    &>li:after {
-        content: "";
-        display: block;
-        width: 80%;
-        height: .05rem;
-        background: #ddd;
-        margin: 2rem auto;
-    }
 
-    &>li:last-child:after {
-        background: transparent;
+    &>li:last-child {
+        border-bottom: .05rem solid transparent;
     }
 
     h1, h2 {

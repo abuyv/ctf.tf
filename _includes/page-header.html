@@ -41,7 +41,12 @@
                 <li><a href="{{site.url}}/browse/">Browse</a></li>
                 <li><a href="{{site.url}}/index/">Index</a></li>
                 <li>
-                    <a href="https://github.com/Eun/ctf.tf/edit/master/{{page.path}}" target="_blank" class="btn small">Improve this site</a><a href="{{site.url}}/about/" class="fa fa-question"></a><a href="https://github.com/Eun/ctf.tf" class="fa fa-github"></a>
+                    {% if page.collection == 'ctfs' %}
+                    <a href="https://github.com/Eun/ctf.tf/edit/master/{{page.path}}" target="_blank" class="btn small">Improve this CTF</a>
+                    {% else %}
+                    <a href="{{site.url}}/improve/" class="btn small">Improve this site</a>
+                    {% endif %}
+                    <a href="{{site.url}}/about/" class="fa fa-question"></a><a href="https://github.com/Eun/ctf.tf" class="fa fa-github"></a>
                 </li>
             </ul>
         </header>

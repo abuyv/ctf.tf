@@ -13,40 +13,23 @@ layout: page
         </div>
     </header>
     <content>
-        <div class="tab-container">
-            <div class="tab-page">
-                <div class="tabs"></div>
-                <div class="content">
-                    <p><center>Find a CTF to solve, <a href="{{site.url}}/browse/">browse</a> the <a href="{{site.url}}/latest/">latest</a> CTFS, or select a difficulty. Or read more about CTFs <a href="{{site.url}}/about/">here</a>.</center></p>
-                    <ul class="buttons center">
-                        <li><a href="{{site.url}}/easy/">Easy</a></li>
-                        <li><a href="{{site.url}}/medium/">Medium</a></li>
-                        <li><a href="{{site.url}}/hard/">Hard</a></li>
-                    </ul>
-                    
-                </div>
-            </div>
-        </div>        
-        <div class="tab-container">
-            <div class="tab-page">
-                <div class="tabs"></div>
-                <div class="content">
-                    <h1>Latest CTFS</h1>
-                    {% assign size = site.ctfs | size %}
-                    {% if size > 0 %}
-                        {% assign sorted = site.ctfs | reverse %}
-                        {% include limit-list list=sorted offset=0 count=10 %}
-                        {% include list.html ctfs=list %}
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-        <div class="tab-container">
-            <div class="tab-page">
-                <div class="tabs"></div>
-                <div class="content">
-                    {% include index-list.html %}
-                </div>
-            </div>
-        </div>
+        <p><center>Find a CTF to solve, <a href="{{site.url}}/browse/">browse</a> the <a href="{{site.url}}/latest/">latest</a> CTFS, or select a difficulty. Or read more about CTFs <a href="{{site.url}}/about/">here</a>.</center></p>
+        <ul class="buttons center">
+            <li><a href="{{site.url}}/easy/">Easy</a></li>
+            <li><a href="{{site.url}}/medium/">Medium</a></li>
+            <li><a href="{{site.url}}/hard/">Hard</a></li>
+        </ul>
+    </content>
+    <content>
+    <h1>Latest CTFS</h1>
+    {% assign size = site.ctfs | size %}
+    {% if size > 0 %}
+        {% assign sorted = site.ctfs | reverse %}
+        {% include limit-list list=sorted offset=0 count=10 %}
+        {% include list.html ctfs=list %}
+    {% endif %}
+    </content>
+    <content>
+    {% include index-list.html %}
+    </content>
 </main>

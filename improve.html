@@ -1,0 +1,48 @@
+---
+layout: page
+permalink: /improve/
+---
+<main>
+    <header>
+        <div>
+            <ul>
+                <li>
+                    <h1>Improve</h1>
+                </li>
+                <li></li>
+            </ul>
+        </div>
+    </header>
+    <content>
+        Got some spare time?<br/>Want to contribute and help to build the site?<br/>No problem we got some CTFs that you can improve.
+    </content>
+    <content>
+    {% assign ctfs = site.ctfs | sample:100 %}
+
+    {% assign list = '' | split: ',' %}
+
+    {% assign _i = 0 %}
+
+    {% for _item in ctfs %}
+        {% if _item.draft != true %}
+            {% assign size = _item.content | strip_html | normalize_whitespace | size %}
+            {% if size == 0 %}
+                {% assign list = list | push: _item %}
+                {% assign _i = _i | plus: 1 %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+
+    {% assign size = list | size %}
+    {% if size > 0 %}
+        {% include limit-list list=list offset=0 count=10 %}
+        {% include list.html ctfs=list %}
+    {% else %}
+        {% include limit-list list=ctfs offset=0 count=10 %}
+        {% include list.html ctfs=list %}
+    {% endif %}
+    </content>
+    <content>
+    {% include index-list.html %}
+    </content>
+</main>
