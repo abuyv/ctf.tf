@@ -522,7 +522,7 @@ main {
             display: block;
             width: 60rem;
             overflow: hidden;
-            height: .08rem;
+            height: .05rem;
             background: #ddd;
             margin: 0 auto;
         }
@@ -638,13 +638,13 @@ ul.buttons {
     }
 }
 
+
 ul.index-list {
     padding: 1rem 0 0 0;
     margin: 0;
     list-style: none;
     display: block;
     font-size: 0;
-    border-top: .05rem #ddd solid;
     text-align: center;
     li {
         padding: 0 .2rem 0 0;

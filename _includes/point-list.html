@@ -1,4 +1,4 @@
-{% assign _offset = page.title %}
+{% assign _offset = page.title | to_integer %}
 {% assign _collection = site.collections | where:'label',include.collection | first %}
 
 {% capture _exp1 %}item.points >= {{ include.min_points }}{% endcapture %}

@@ -1,126 +1,61 @@
-cd _browse
-rm 2.html
-rm 3.html
-rm 4.html
-rm 5.html
-rm 6.html
-rm 7.html
-rm 8.html
-rm 9.html
-rm 10.html
-rm 11.html
-rm 12.html
-rm 13.html
-rm 14.html
-rm 15.html
-rm 16.html
-rm 17.html
-rm 18.html
-rm 19.html
-rm 20.html
-cd ..
+#!/bin/bash
+TOOL="rm"
 
-cd _easy
-rm 2.html
-rm 3.html
-rm 4.html
-rm 5.html
-rm 6.html
-rm 7.html
-rm 8.html
-rm 9.html
-rm 10.html
-rm 11.html
-rm 12.html
-rm 13.html
-rm 14.html
-rm 15.html
-rm 16.html
-rm 17.html
-rm 18.html
-rm 19.html
-rm 20.html
-cd ..
+function linkrange {
+    COUNTER=$2
+    while [  $COUNTER -le $3 ]; do
+        $TOOL $COUNTER.html &> /dev/null
+        let COUNTER=COUNTER+1 
+    done
+}
 
-cd _hard
-rm 2.html
-rm 3.html
-rm 4.html
-rm 5.html
-rm 6.html
-rm 7.html
-rm 8.html
-rm 9.html
-rm 10.html
-rm 11.html
-rm 12.html
-rm 13.html
-rm 14.html
-rm 15.html
-rm 16.html
-rm 17.html
-rm 18.html
-rm 19.html
-rm 20.html
-cd ..
+# paginate sites
+paginate=(_browse _latest _easy _medium _hard)
 
+for item in ${paginate[*]}
+do
+	echo "Removing $item..."
+    cd $item
+    linkrange 1 2 10
+    cd ..
+done
 
-cd _latest
-rm 2.html
-rm 3.html
-rm 4.html
-rm 5.html
-rm 6.html
-rm 7.html
-rm 8.html
-rm 9.html
-rm 10.html
-rm 11.html
-rm 12.html
-rm 13.html
-rm 14.html
-rm 15.html
-rm 16.html
-rm 17.html
-rm 18.html
-rm 19.html
-rm 20.html
-cd ..
-
+echo "Removing _index"
+# index
 cd _index
-rm 1.html
-rm 2.html
-rm 3.html
-rm 4.html
-rm 5.html
-rm 6.html
-rm 7.html
-rm 8.html
-rm 9.html
-rm a.html
-rm b.html
-rm c.html
-rm d.html
-rm e.html
-rm f.html
-rm g.html
-rm h.html
-rm i.html
-rm j.html
-rm k.html
-rm l.html
-rm m.html
-rm n.html
-rm o.html
-rm p.html
-rm q.html
-rm r.html
-rm s.html
-rm t.html
-rm u.html
-rm v.html
-rm w.html
-rm x.html
-rm y.html
-rm z.html
+$TOOL 1.html  &> /dev/null
+$TOOL 2.html  &> /dev/null
+$TOOL 3.html  &> /dev/null
+$TOOL 4.html  &> /dev/null
+$TOOL 5.html  &> /dev/null
+$TOOL 6.html  &> /dev/null
+$TOOL 7.html  &> /dev/null
+$TOOL 8.html  &> /dev/null
+$TOOL 9.html  &> /dev/null
+$TOOL a.html  &> /dev/null
+$TOOL b.html  &> /dev/null
+$TOOL c.html  &> /dev/null
+$TOOL d.html  &> /dev/null
+$TOOL e.html  &> /dev/null
+$TOOL f.html  &> /dev/null
+$TOOL g.html  &> /dev/null
+$TOOL h.html  &> /dev/null
+$TOOL i.html  &> /dev/null
+$TOOL j.html  &> /dev/null
+$TOOL k.html  &> /dev/null
+$TOOL l.html  &> /dev/null
+$TOOL m.html  &> /dev/null
+$TOOL n.html  &> /dev/null
+$TOOL o.html  &> /dev/null
+$TOOL p.html  &> /dev/null
+$TOOL q.html  &> /dev/null
+$TOOL r.html  &> /dev/null
+$TOOL s.html  &> /dev/null
+$TOOL t.html  &> /dev/null
+$TOOL u.html  &> /dev/null
+$TOOL v.html  &> /dev/null
+$TOOL w.html  &> /dev/null
+$TOOL x.html  &> /dev/null
+$TOOL y.html  &> /dev/null
+$TOOL z.html  &> /dev/null
 cd ..

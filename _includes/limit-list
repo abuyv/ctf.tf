@@ -1,10 +1,24 @@
 {% assign list = '' | split: ',' %}
 {% assign hasMoreItems = false %}
-{% for _item in include.list offset:include.offset %}
-    {% assign _count = list | size | plus: 1 %}
-    {% if _count > include.count %}
-        {% assign hasMoreItems = true %}
-        {% break %}
+{% assign _i = 0 %}
+
+{% assign _c = 0 %}
+
+{% assign _items = include.count | times: include.offset %}
+
+{% for _item in include.list %}
+    {% if _item.draft != true %}
+
+        {% if _c >=  _items %}
+            {% if _i >= include.count %}
+                {% assign hasMoreItems = true %}
+                {% break %}
+            {% endif %}
+            {% assign list = list | push: _item %}
+            {% assign _i = _i | plus: 1 %}
+        {% endif %}
+
+        {% assign _c = _c | plus: 1 %}
+        
     {% endif %}
-    {% assign list = list | push: _item %}
 {% endfor %}

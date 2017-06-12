@@ -8,7 +8,7 @@ minify_html: true
 
 url: "//ctf.tf"
 title: "ctf.tf"
-description: "ctf.tf is a database of collected CTFs and their solutions."
+description: "A database of collected CTFs and their solutions."
 collections:
   ctfs:
     output: true
@@ -26,15 +26,15 @@ collections:
     paginate: 20
   easy:
     output: true
-    permalink: /mode/:path/
+    permalink: /mode/easy/:path/
     paginate: 20
   medium:
     output: true
-    permalink: /mode/:path/
+    permalink: /mode/medium/:path/
     paginate: 20
   hard:
     output: true
-    permalink: /mode/:path/
+    permalink: /mode/hard/:path/
     paginate: 20
 
 
@@ -74,4 +74,4 @@ defaults:
       type: hard
     values:
       layout: hard
-exclude: [README.md, LICENSE, .git, create_links.sh, CNAME]
+exclude: [README.md, LICENSE, .git, create_links.sh, remove_links.sh, CNAME, .gitignore]

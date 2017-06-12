@@ -42,13 +42,15 @@
 
 {% if include.offset and include.collection %}
     <nav>
-        {% assign _prevPage = include.offset | minus:include.collection.paginate %}
-        {% assign _prevPage =  include.collection.docs | where:'title', _prevPage | first %}
-        {% if _prevPage %}
-            <a href="{{_prevPage.url}}">Previous</a>
+        {% if include.offset > 0 %}
+            {% assign _prevPage = include.offset | minus:1 %}
+            {% assign _prevPage = include.collection.docs | where:'title', _prevPage | first %}
+            {% if _prevPage %}
+                <a href="{{_prevPage.url}}">Previous</a>
+            {% endif %}
         {% endif %}
         {% if include.hasMoreItems == true %}
-            {% assign _nextPage = include.offset | plus:include.collection.paginate %}
+            {% assign _nextPage = include.offset | plus:1 %}
             {% assign _nextPage =  include.collection.docs | where:'title', _nextPage | first %}
             {% if _nextPage %}
                 {% if _prevPage %}
