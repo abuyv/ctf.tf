@@ -7,9 +7,11 @@ Assassination,
  
 
 First of all I wane say hello to everyone and thanks for solving my little puzzles.
+
 A happy New Year to all of you and make the best of it!
+
 Just make a key generator for this one, in the beginning it looks a bit confusing
-and you would say this is never a level 2 experience. 
+and you would say this is never a level 2 experience.  
 But you can trust me finding out a singe key a key generator
 is written in no-time using ASM-code. When I made you curious take a look and solve it.
 
@@ -31,6 +33,7 @@ The unlock code would be : 123456788
 Easy he. 
 
 The program was tested on win-ME and win-XP and both worked fine.
+
 If you liked the idea or just want to use something from the source bee free but don’t
 forget to mention my name!
  
