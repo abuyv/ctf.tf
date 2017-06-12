@@ -20,28 +20,16 @@
         </div>
     </header>
     <content>
-        <div class="tab-container">
-            <div class="tab-page">
-                <div class="tabs"></div>
-                <div class="content">
-                    {% if isIndexPage != true %}
-                        {% assign _letter = page.title %}
-                        {% include index-list list=site.ctfs letter=_letter %}
-                        {% include list.html ctfs=list %}
-                    {% else %}
-                        Browse all ctfs sorted by their first letter.
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-        <div class="tab-container">
-            <div class="tab-page">
-                <div class="tabs"></div>
-                <div class="content">
-                    {% include index-list.html %}
-                </div>
-            </div>
-        </div>
+        {% if isIndexPage != true %}
+            {% assign _letter = page.title %}
+            {% include index-list list=site.ctfs letter=_letter %}
+            {% include list.html ctfs=list %}
+        {% else %}
+            Browse all ctfs sorted by their first letter.
+        {% endif %}
+    </content>
+    <content>
+        {% include index-list.html %}
     </content>
 </main>
 {% include page-footer.html %}

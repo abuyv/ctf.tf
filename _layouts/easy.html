@@ -11,15 +11,7 @@
         </div>
     </header>
     <content>
-        <div class="tab-container">
-            <div class="tab-page">
-                <div class="tabs"></div>
-                <div class="content">
-                    {% include point-list.html min_points=0 max_points=100 collection='easy' %}
-                </div>
-            </div>
-        </div>
-        
+        {% include point-list.html min_points=0 max_points=100 collection='easy' %}
     </content>
 </main>
 {% include page-footer.html %}

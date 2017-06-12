@@ -74,4 +74,13 @@ defaults:
       type: hard
     values:
       layout: hard
+
+kramdown:
+  auto_ids:       true
+  entity_output:  as_char
+  toc_levels:     1..6
+  smart_quotes:   lsquo,rsquo,ldquo,rdquo
+  input:          GFM
+  hard_wrap:      true
+  footnote_nr:    1
 exclude: [README.md, LICENSE, .git, create_links.sh, remove_links.sh, CNAME, .gitignore]
