@@ -28,7 +28,7 @@
                         <li>&nbsp;<a class="info small">{{page.author}}</a>&nbsp;</li>
                     {% endif %}
                     {% if page.download %}
-                        <li>&nbsp;<a href="{{page.download}}" class="btn small">Download</a>&nbsp;</li>
+                        <li>&nbsp;<a href="{{page.download | uri_escape}}" class="btn small">Download</a>&nbsp;</li>
                     {% endif %}
                     </ul>
                 </li>
