@@ -13,7 +13,7 @@
     <content>
         {% assign _offset = page.title | to_integer %}
         {% assign _collection = site.collections | where:'label','latest' | first %}
-        {% assign ctfs = site.ctfs | reverse %}
+        {% assign ctfs = (site.ctfs | sort: 'date') | reverse %}
         {% include limit-list list=ctfs offset=_offset count=_collection.paginate %}
         {% include list.html ctfs=list collection=_collection offset=_offset hasMoreItems=hasMoreItems %}
     </content>

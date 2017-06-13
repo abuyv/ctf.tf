@@ -24,8 +24,8 @@ layout: page
     <h1>Latest CTFS</h1>
     {% assign size = site.ctfs | size %}
     {% if size > 0 %}
-        {% assign sorted = site.ctfs | reverse %}
-        {% include limit-list list=sorted offset=0 count=10 %}
+        {% assign ctfs = (site.ctfs | sort: 'date') | reverse %}
+        {% include limit-list list=ctfs offset=0 count=10 %}
         {% include list.html ctfs=list %}
     {% endif %}
     </content>
