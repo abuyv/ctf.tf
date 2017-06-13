@@ -1,10 +1,5 @@
-gems:
-- octopress-minify-html
-
 sass:
   style: compressed
-
-minify_html: true
 
 url: "//ctf.tf"
 title: "ctf.tf"
@@ -19,10 +14,6 @@ collections:
   browse:
     output: true
     permalink: /browse/:path/
-    paginate: 20
-  latest:
-    output: true
-    permalink: /latest/:path/
     paginate: 20
   easy:
     output: true
@@ -54,11 +45,6 @@ defaults:
       type: browse
     values:
       layout: browse
-  - scope:
-      path: ""
-      type: latest
-    values:
-      layout: latest
   - scope:
       path: ""
       type: easy

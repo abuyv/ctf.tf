@@ -13,7 +13,7 @@ function linkrange {
 }
 
 # paginate sites
-paginate=(_browse _latest _easy _medium _hard)
+paginate=(_browse _easy _medium _hard)
 
 for item in ${paginate[*]}
 do

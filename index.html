@@ -13,7 +13,7 @@ layout: page
         </div>
     </header>
     <content>
-        <p><center>Find a CTF to solve, <a href="{{site.url}}/browse/">browse</a> the <a href="{{site.url}}/latest/">latest</a> CTFS, or select a difficulty. Or read more about CTFs <a href="{{site.url}}/about/">here</a>.</center></p>
+        <p><center>Find a CTF to solve, <a href="{{site.url}}/browse/">browse</a> CTFS, or select a difficulty. Or read more about CTFs <a href="{{site.url}}/about/">here</a>.</center></p>
         <ul class="buttons center">
             <li><a href="{{site.url}}/mode/easy/">Easy</a></li>
             <li><a href="{{site.url}}/mode/medium/">Medium</a></li>
@@ -21,15 +21,6 @@ layout: page
         </ul>
     </content>
     <content>
-    <h1>Latest CTFS</h1>
-    {% assign size = site.ctfs | size %}
-    {% if size > 0 %}
-        {% assign ctfs = (site.ctfs | sort: 'date') | reverse %}
-        {% include limit-list list=ctfs offset=0 count=10 %}
-        {% include list.html ctfs=list %}
-    {% endif %}
-    </content>
-    <content>
-    {% include index-list.html %}
+        {% include index-list.html %}
     </content>
 </main>
