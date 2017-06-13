@@ -10,8 +10,8 @@ small crackers, how you did it.
 
 PROTECTION: quite easy if you have in mind that i used the most known bignum library :-))
 DIFICULTY: i would say 5/10,hope that the community thinks the same,if not just mail and convince me.
-Have fun,
+Have fun.
 
-- bLaCk-eye
+
 PS:Like always i made a keygen to check the correction of the algo, but there might be mistakes in programming.  
 If you have one just report it to me : mycherynos@yahoo.com.
