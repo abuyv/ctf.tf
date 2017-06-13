@@ -20,6 +20,35 @@ layout: page
             <li><a href="{{site.url}}/mode/hard/">Hard</a></li>
         </ul>
     </content>
+    {% assign size = site.ctfs | size %}
+    {% if size > 0 %}
+    <content>
+        <h2>Try some CTFs</h2>
+        {% assign ctfs = site.ctfs | sample:100 %}
+        {% assign list = '' | split: ',' %}
+
+        {% assign _i = 0 %}
+
+        {% for _item in ctfs %}
+            {% if _item.draft != true %}
+                {% assign size = _item.content | strip_html | normalize_whitespace | size %}
+                {% if size > 0 %}
+                    {% assign list = list | push: _item %}
+                    {% assign _i = _i | plus: 1 %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+
+        {% assign size = list | size %}
+        {% if size > 0 %}
+            {% include limit-list list=list offset=0 count=10 %}
+            {% include list.html ctfs=list %}
+        {% else %}
+            {% include limit-list list=ctfs offset=0 count=10 %}
+            {% include list.html ctfs=list %}
+        {% endif %}
+    </content>
+    {% endif %}
     <content>
         {% include index-list.html %}
     </content>
