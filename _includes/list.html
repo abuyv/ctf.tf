@@ -21,11 +21,11 @@
                 </li>
                 <li>
                     <ul class="detail-info">
-                        {% if _ctf.points %}
-                            <li>&nbsp;<a class="info small">{{_ctf.points}} Points</a>&nbsp;</li>
-                        {% endif %}
                         {% if _ctf.author %}
                             <li>&nbsp;<a class="info small">{{_ctf.author}}</a>&nbsp;</li>
+                        {% endif %}
+                        {% if _ctf.points %}
+                            <li>&nbsp;<a class="info small black">{{_ctf.points}} Points</a>&nbsp;</li>
                         {% endif %}
                     </ul>
                 </li>
