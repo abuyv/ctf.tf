@@ -490,11 +490,16 @@ a.info {
         color: #212121;
         background: #eeeeee;
         text-decoration: none;
+        display: inline-block;
     }
     &.small {
         &, &:active, &:link, &:focus, &:hover, &:visited {
             font-size: .8rem;
         }
+    }
+    &.black {
+        color: #fafafa;
+        background: #333333;
     }
 }
 
