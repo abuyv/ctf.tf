@@ -21,11 +21,11 @@
                 </li>
                 <li>
                     <ul class="detail-info">
-                    {% if page.points %}
-                        <li>&nbsp;<a class="info small black">{{page.points}} Points</a>&nbsp;</li>
-                    {% endif %}
                     {% if page.author %}
                         <li>&nbsp;<a class="info small">{{page.author}}</a>&nbsp;</li>
+                    {% endif %}
+                    {% if page.points %}
+                        <li>&nbsp;<a class="info small black">{{page.points}} Points</a>&nbsp;</li>
                     {% endif %}
                     {% if page.download %}
                         <li>&nbsp;<a href="{{page.download | uri_escape}}" class="btn small">Download</a>&nbsp;</li>
