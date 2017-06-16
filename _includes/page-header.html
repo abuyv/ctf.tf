@@ -42,7 +42,7 @@
                 <li><a href="{{site.url}}/index/">Index</a></li>
                 <li>
                     {% if page.collection == 'ctfs' %}
-                    <a href="https://github.com/Eun/ctf.tf/edit/master/{{page.path}}" target="_blank" class="btn small">Improve this CTF</a>
+                    <a href="https://github.com/Eun/ctf.tf/edit/master/{{page.path | uri_escape}}" target="_blank" class="btn small">Improve this CTF</a>
                     {% else %}
                     <a href="{{site.url}}/improve/" class="btn small">Improve this site</a>
                     {% endif %}
