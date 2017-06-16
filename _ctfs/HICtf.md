@@ -9,3 +9,19 @@ Find the flag.
 
 Rules: No Patching
 
+
+
+## Hints
+
+
+<details>
+    <summary>Hint#1</summary>
+    Caesar cipher
+</details>
+
+<details>
+    <summary>Hint#2</summary>
+    Environment variables
+</details>
+
+
